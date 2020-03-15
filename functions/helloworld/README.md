@@ -9,3 +9,10 @@ See:
 
 [tutorial]: https://cloud.google.com/functions/docs/quickstart
 [code]: main.py
+
+    D:
+    cd D:\Documents\Workspaces\Git\GCPPython\functions\helloworld
+    
+    gcloud auth login
+    gcloud functions deploy edittrich-function-1 --entry-point hello_http --runtime python37 --trigger-http --allow-unauthenticated
+    curl https://us-central1-edittrich-functions.cloudfunctions.net/edittrich-function-1
