@@ -12,7 +12,7 @@ See:
 
     D:
     cd D:\Documents\Workspaces\Git\GCPPython\functions\helloworld
-    test
+    
     gcloud auth login
     gcloud config set project myProject
     gcloud functions deploy edittrich-function-1 --entry-point hello_http --runtime python37 --trigger-http --allow-unauthenticated
