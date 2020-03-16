@@ -14,6 +14,18 @@ See:
     cd D:\Documents\Workspaces\Git\GCPPython\functions\helloworld
     
     gcloud auth login
-    gcloud config set project myProject
+    
+    gcloud projects create edittrich-functions --set-as-default
+    gcloud config set project edittrich-functions
+    gcloud config set functions/region us-central1
+    gcloud services enable cloudfunctions.googleapis.com
+    
+    gsutil mb -l us-central1 -c standard -b on gs://edittrich-bucket-1/
+    
     gcloud functions deploy edittrich-function-1 --entry-point hello_http --runtime python37 --trigger-http --allow-unauthenticated
+    gcloud functions deploy edittrich-function-2 --entry-point hello_gcs  --runtime python37 --trigger-resource edittrich-bucket-1 --trigger-event google.storage.object.finalize    
+    
     curl https://us-central1-edittrich-functions.cloudfunctions.net/edittrich-function-1
+    gsutil cp test.txt gs://edittrich-bucket-1/
+
+    gcloud projects delete edittrich-functions
