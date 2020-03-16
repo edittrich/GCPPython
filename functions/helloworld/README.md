@@ -29,3 +29,4 @@ See:
     gsutil cp test.txt gs://edittrich-bucket-1/
 
     gcloud projects delete edittrich-functions
+    
